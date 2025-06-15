@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3642b4f07a05ee047b7805eb32324230, type: 3}
+  m_Name: FloorSet
+  m_EditorClassIdentifier: 
+  _floorTilesPrefabs:
+  - {fileID: 1749311345016393007, guid: be2d05bfe0a29e44d8c17de32556b564, type: 3}
+  - {fileID: 1000362115137058220, guid: 904c9f345aacc5e4b824ec83ca1b178c, type: 3}
+  - {fileID: 8910503615769847703, guid: 581c8ce922fb4c84c87ba5e219ddab7f, type: 3}
+  - {fileID: 29251136939815246, guid: 5fd9c23743fb83c4c970d8b0ac5f1c07, type: 3}
+  - {fileID: 7005116241891242388, guid: 5a10c34e23891ec42aa56a7ed7445a53, type: 3}
+  - {fileID: 3275247514093555911, guid: 70b88ac3e46eadf40a7548f05f7cdb76, type: 3}
+  _floorSetData:
+    tileWidth: 10
+    tileHeight: 10
+    numberOfTilesHorizontally: 10
+    numberOfTilesVertically: 10
