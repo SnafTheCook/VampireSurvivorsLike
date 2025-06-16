@@ -7,7 +7,7 @@ public class ProjectileTriggerChecker : TriggerCheckerBase, ITriggerCheckerEvent
     public event UnityAction<GameObject> OnTriggerWithTarget = delegate { };
     private void OnTriggerEnter(Collider other)
     {
-        if (DoesTagExistInTargetList(other.gameObject.tag))
+        if (DoesTagExistInTargetList(other.gameObject))
         {
             OnTriggerWithTarget?.Invoke(other.gameObject);
             Destroy(gameObject);

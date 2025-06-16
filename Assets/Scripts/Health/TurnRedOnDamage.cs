@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class TurnRedOnDamage : HealthDamagedObserver
 {
@@ -7,6 +8,7 @@ public class TurnRedOnDamage : HealthDamagedObserver
     private Color _baseColor;
     private int colorId;
     private Task _currentTask = null;
+    private List<Material> _materialsList = new List<Material>();
     
 
     protected override void Awake()
@@ -14,7 +16,8 @@ public class TurnRedOnDamage : HealthDamagedObserver
         base.Awake();
         colorId = Shader.PropertyToID("_BaseColor");
         _meshRendererer = GetComponentInChildren<SkinnedMeshRenderer>();
-        _baseColor = _meshRendererer.materials[0].GetColor(colorId);
+        _meshRendererer.GetMaterials(_materialsList);
+        _baseColor = _materialsList[0].GetColor(colorId);
     }
     public override void ExecuteEffect()
     {
@@ -27,8 +30,8 @@ public class TurnRedOnDamage : HealthDamagedObserver
 
     private async Task DoEffect()
     {
-        _meshRendererer.materials[0].SetColor(colorId, Color.red);
+        _materialsList[0].SetColor(colorId, Color.red);
         await Awaitable.WaitForSecondsAsync(0.1f, destroyCancellationToken);
-        _meshRendererer.materials[0].SetColor(colorId, _baseColor);
+        _materialsList[0].SetColor(colorId, _baseColor);
     }
 }

@@ -13,9 +13,6 @@ public class PlayerController : MonoBehaviour
         _playerInput = GetComponent<IPlayerInput>();
         _playerMovement = GetComponent<IPlayerMovable>();
         _playerAttack = GetComponent<IPlayerAttack>();
-
-        if (_playerInput == null)
-            _playerInput = gameObject.AddComponent<PlayerInput>();
     }
 
     private void FixedUpdate()

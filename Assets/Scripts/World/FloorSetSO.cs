@@ -34,7 +34,6 @@ public class FloorSetSO : ScriptableObject
         FloorCreator.WorldBounds = new Vector2
             (_floorSetData.tileWidth * (_floorSetData.numberOfTilesHorizontally) / 2, 
             _floorSetData.tileHeight * (_floorSetData.numberOfTilesVertically) / 2);
-        Debug.Log(FloorCreator.WorldBounds);
     }
 
 }

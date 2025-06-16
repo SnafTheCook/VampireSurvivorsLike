@@ -49,7 +49,7 @@ public class AttackBaseSO : ScriptableObject, ITimerable
     }
     protected void InitializeTriggerChecker(GameObject rangeCheckGameObject)
     {
-        _triggerChecker = rangeCheckGameObject.AddComponent<AttackTriggerChecker>();
+        _triggerChecker = rangeCheckGameObject.AddComponent<AttackTriggerChecker>(); //or make it a prefab?
         _triggerChecker.GetListOfPossibleTargets(possibleTargets);
     }
 
@@ -64,7 +64,7 @@ public class AttackBaseSO : ScriptableObject, ITimerable
                 {
                     if (coll != null)
                     {
-                        if (tag.ToString() == coll.gameObject.tag)
+                        if (coll.gameObject.CompareTag(tag.ToString()))
                             TryDealDamage(coll.gameObject);
                     }
                 }

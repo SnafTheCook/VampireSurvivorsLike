@@ -12,7 +12,7 @@ public class AttackTriggerChecker : TriggerCheckerBase
 
     private void OnTriggerEnter(Collider coll)
     {
-        if (DoesTagExistInTargetList(coll.gameObject.tag))
+        if (DoesTagExistInTargetList(coll.gameObject))
             _collidersList.Add(coll);
     }
     private void OnTriggerExit(Collider coll)

@@ -13,11 +13,11 @@ public class TriggerCheckerBase : MonoBehaviour
         }
     }
 
-    protected bool DoesTagExistInTargetList(string str)
+    protected bool DoesTagExistInTargetList(GameObject taggedObject)
     {
-        foreach (var item in _possibleTargetsTags)
+        foreach (var tag in _possibleTargetsTags)
         {
-            if (str == item)
+            if (taggedObject.CompareTag(tag))
                 return true;
         }
         return false;
