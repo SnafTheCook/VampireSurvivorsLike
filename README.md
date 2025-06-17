@@ -4,7 +4,7 @@ Right now, I’m modeling the game after Vampire Survivors, since this is my fir
 It's still a work in progress, but you can try the playable demo below. Feedback is welcome!  
 [Vampire Survivors-like](https://snaf-og.itch.io/vampiresurvivorslike)
 
-Made in Unity and C#
+Unity 6000.1.5f1, C#
 
 Plans for nearest future:  
 -object pooling  
