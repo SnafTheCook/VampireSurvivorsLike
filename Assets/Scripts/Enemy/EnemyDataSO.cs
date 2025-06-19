@@ -9,4 +9,5 @@ public class EnemyDataSO : ScriptableObject
     public float damage = 10;
     public float attackRange = 1; //melee
     public float experience = 100;
+    public PoolingKeys poolingKey;
 }

@@ -5,6 +5,11 @@ public class TriggerCheckerBase : MonoBehaviour
 {
     protected List<string> _possibleTargetsTags = new List<string>();
 
+    private void OnEnable()
+    {
+        _possibleTargetsTags = new List<string>();
+    }
+
     public void GetListOfPossibleTargets(List<TargetOfAttacks> targetsList)
     {
         foreach (var tag in targetsList)

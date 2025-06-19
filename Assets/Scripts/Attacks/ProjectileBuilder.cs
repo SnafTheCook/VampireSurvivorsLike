@@ -3,13 +3,20 @@ using UnityEngine;
 
 public class ProjectileBuilder
 {
-    private GameObject _projectilePrefab;
+    private ProjectileMover _projectilePrefab;
     private float _speed;
     private List<TargetOfAttacks> _possibleTargetsList;
+    private PoolingKeys _poolingKey;
 
-    public ProjectileBuilder WithPrefab(GameObject projectilePrefab)
+    public ProjectileBuilder WithPrefab(ProjectileMover projectilePrefab)
     {
         _projectilePrefab = projectilePrefab;
+        return this;
+    }
+
+    public ProjectileBuilder WithPoolingKey(PoolingKeys key)
+    {
+        _poolingKey = key;
         return this;
     }
 
@@ -27,10 +34,12 @@ public class ProjectileBuilder
 
     public GameObject Build(Transform attackerTransform)
     {
-        GameObject projectile = GameObject.Instantiate(_projectilePrefab, attackerTransform.position, attackerTransform.rotation);
-        projectile.GetComponent<ProjectileMover>().SetSpeed(_speed);
+        ObjectPooling.Instance.CreatePool(_poolingKey, _projectilePrefab, 50);
+        var projectile = ObjectPooling.Instance.GetPool<ProjectileMover>(_poolingKey).Get(attackerTransform.position, attackerTransform.rotation);
+
+        projectile.SetSpeed(_speed);
         projectile.GetComponent<ProjectileTriggerChecker>().GetListOfPossibleTargets(_possibleTargetsList);
 
-        return projectile;
+        return projectile.gameObject;
     }
 }

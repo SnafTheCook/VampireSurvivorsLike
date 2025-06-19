@@ -8,11 +8,11 @@ public class EnemyFactorySO : ScriptableObject
 
     public void CreateOrangeEnemy(Vector3 spawnPosition)
     {
-        _orangeEnemyFactory.CreateEnemy(spawnPosition);
+        _orangeEnemyFactory.CreateEnemy(spawnPosition, PoolingKeys.OrangeEnemy);
     }
 
     public void CreatePurpleEnemy(Vector3 spawnPosition)
     {
-        _purpleEnemyFactory.CreateEnemy(spawnPosition);
+        _purpleEnemyFactory.CreateEnemy(spawnPosition, PoolingKeys.PurpleEnemy);
     }
 }

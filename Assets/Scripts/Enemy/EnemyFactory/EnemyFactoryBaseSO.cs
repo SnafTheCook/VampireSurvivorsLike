@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class EnemyFactoryBaseSO : ScriptableObject
 {
-    [SerializeField] protected GameObject _enemyPrefab;
-    public virtual void CreateEnemy(Vector3 spawnPosition)
+    [SerializeField] protected EnemyController _enemyPrefab;
+    public virtual void CreateEnemy(Vector3 spawnPosition, PoolingKeys key)
     {
-        GameObject.Instantiate(_enemyPrefab, spawnPosition, Quaternion.identity); //TODO: implement object pooling
+        ObjectPooling.Instance.GetPool<EnemyController>(key).Get(spawnPosition);
     }
 }

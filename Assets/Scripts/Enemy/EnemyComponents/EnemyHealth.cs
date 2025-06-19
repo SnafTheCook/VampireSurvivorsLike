@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public Health HealthComponent { get; set; }
     private IEnemyData _enemyDataComponent;
     public event UnityAction OnDamageTaken = delegate { };
+    private IPoolable poolID;
     private void Awake()
     {
         _enemyDataComponent = GetComponent<IEnemyData>();
@@ -20,7 +21,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Destroy(gameObject);
+        ObjectPooling.Instance.GetPool<EnemyController>(_enemyDataComponent.EnemyData.poolingKey).ReturnToPool(GetComponent<EnemyController>());
+        //Destroy(gameObject);
     }
 
     private void OnEnable()
@@ -32,4 +34,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         HealthComponent.OnDeath -= Die;
     }
+}
+
+public interface IPoolable
+{
+
 }

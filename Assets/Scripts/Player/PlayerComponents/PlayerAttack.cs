@@ -11,7 +11,10 @@ public class PlayerAttack : MonoBehaviour, IPlayerAttack //TODO: clean up
     private void Awake()
     {
         _animationController = GetComponent<IAnimationController>();
+    }
 
+    private void OnEnable()
+    {
         foreach (var attack in _listOfAllAttacks)
         {
             AttackBaseSO newAttack = Object.Instantiate(attack);
@@ -26,6 +29,12 @@ public class PlayerAttack : MonoBehaviour, IPlayerAttack //TODO: clean up
     }
 
     private void OnDestroy()
+    {
+        OnObjectDestroy?.Invoke();
+        OnObjectDestroy = null;
+    }
+
+    private void OnDisable()
     {
         OnObjectDestroy?.Invoke();
         OnObjectDestroy = null;

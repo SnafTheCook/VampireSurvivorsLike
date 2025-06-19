@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "Scriptables/ProjectileDataSO")]
 public class ProjectileDataSO : ScriptableObject
 {
-    public GameObject projectilePrefab;
+    public ProjectileMover projectilePrefab;
     public float projectileSpeed;
     
 
@@ -12,6 +12,7 @@ public class ProjectileDataSO : ScriptableObject
     {
         GameObject projectile = new ProjectileBuilder()
             .WithPrefab(projectilePrefab)
+            .WithPoolingKey(PoolingKeys.Fireball)
             .WithSpeed(projectileSpeed)
             .WithTargets(possibleTargetsList)
             .Build(attackerTransform);

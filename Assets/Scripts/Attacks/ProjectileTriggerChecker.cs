@@ -10,11 +10,11 @@ public class ProjectileTriggerChecker : TriggerCheckerBase, ITriggerCheckerEvent
         if (DoesTagExistInTargetList(other.gameObject))
         {
             OnTriggerWithTarget?.Invoke(other.gameObject);
-            Destroy(gameObject);
+            ObjectPooling.Instance.GetPool<ProjectileMover>(PoolingKeys.Fireball).ReturnToPool(GetComponent<ProjectileMover>());
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         OnTriggerWithTarget = null;
     }
