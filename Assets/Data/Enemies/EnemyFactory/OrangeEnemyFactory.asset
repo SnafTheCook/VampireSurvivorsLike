@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da9d7f23f2484aae762d3f9411f31, type: 3}
   m_Name: OrangeEnemyFactory
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 6599882977877218854, guid: ff908b277032ecf428fd4a3d8c4b1634, type: 3}
+  _enemyPrefab: {fileID: 4544597949047799548, guid: ff908b277032ecf428fd4a3d8c4b1634, type: 3}

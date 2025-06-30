@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
     private const float ENEMY_SPAWN_DISTANCE = 20f;
 
     float timer = 0f;
+
     private void Update() //TODO just spawning every 2s for now
     {
         timer += Time.deltaTime;

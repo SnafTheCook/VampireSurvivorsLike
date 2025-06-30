@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff37b32000e49142af7816ec6abf106, type: 3}
   m_Name: PurpleEnemyFactory
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 4146346107767303338, guid: 12d5726a8f7e5b244ba82e5c2e8164db, type: 3}
+  _enemyPrefab: {fileID: 1596112956957297938, guid: 12d5726a8f7e5b244ba82e5c2e8164db, type: 3}
