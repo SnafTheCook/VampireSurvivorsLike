@@ -7,7 +7,7 @@ It's still a work in progress, but you can try the playable demo below. Feedback
 Unity 6000.1.5f1, C#
 
 Plans for nearest future:  
--object pooling  
+-object pooling  :heavy_check_mark:  
 -animations  
 -sounds  
 -collectible powerups and experience  
