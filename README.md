@@ -8,6 +8,7 @@ Unity 6000.1.5f1, C#
 
 Plans for nearest future:  
 -object pooling  :heavy_check_mark:  
+-implement new input system  :heavy_check_mark:  
 -animations  
 -sounds  
 -collectible powerups and experience  
